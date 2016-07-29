@@ -1,0 +1,113 @@
+/*scss/modules/_box.scss*/
+
+.box {
+	max-width: 300px;
+	height: 150px;
+	background: #eee;
+	padding: 20px;
+}
+
+$gap: 15px;
+$flex: calc(33.333% - #{$gap});
+
+.boxes {
+	display: flex;
+	flex-direction: row wrap;
+	align-content: space-between;
+	//padding: $gap/2;
+	margin-right: -$gap;
+	@extend .darken-color-1 !optional;
+	margin-top: $gap*2;
+	margin-bottom: $gap*2;
+	counter-reset: my-awesome-counter;
+	>li {
+		flex: 1;
+		margin-right: $gap;
+		//background: color(4);
+		position: relative;
+		opacity: 1;
+		transform: .25 all ease;
+		counter-increment: my-awesome-counter;
+		&:hover {
+			opacity: .9;
+		}
+		>a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			padding: $gap*1.5 $gap*1.5 $gap*4 $gap*1.5;
+			@include responsive-text-size('deci');
+			color: gray(light);
+			text-decoration: none;
+			position: relative;
+			span {
+				display: block;
+				@include responsive-text-size('deca');
+				margin-bottom: $gap;
+				padding-right: $gap*2;
+				position: relative;
+				padding-left: 30px;
+				&:before {
+					content: counter(my-awesome-counter);
+					//padding: $gap/2 $gap;
+					color: gray(3);
+					position: absolute;
+					top:0;
+					left: 0;
+					font-size: 30px;
+					line-height: 40px;
+					//border-right: 1px solid white;
+					//border-top: 1px solid white;
+				}
+				&:after {
+					content: "\f105";
+					font-family: "FontAwesome";
+					display: block;
+					position: absolute;
+					top:0;
+					right: 0;
+					//padding: $gap;
+					font-size: 30px;
+					line-height: 40px;
+				}
+			}
+		}
+	}
+}
+
+.cta-box {
+	border: $gap solid gray(1);
+	position: relative;
+	@extend .bg-diagnol-up-light;
+	.summary {
+		padding:$gap;
+		p:nth-child(1) {
+			text-transform: uppercase;
+			color: color(2);
+			letter-spacing: -.25px;
+			margin-left: 45%;
+			line-height: 1.2;
+		}
+		p:nth-child(2), .btn {
+			margin-left: 45%;
+		}
+		.btn {
+			padding: $gap/3;
+			@include responsive-text-size('centi');
+		}
+	}
+	figure {
+		position: absolute;
+		bottom: -$gap;
+		left: -$gap;
+		width: 45%;
+		max-height: 90%;
+		overflow: hidden;
+		img {
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 80%;
+		}
+	}
+}

@@ -1,0 +1,75 @@
+$bg_images: (
+	'terra-tech': 'http://atomic.dev/brokerfraud/atomic-core/img/terra-tech.png',
+	'app-mockup': 'http://atomic.dev/brokerfraud/atomic-core/img/app-mockup-1.png',
+	'recover-losses': 'http://atomic.dev/brokerfraud/atomic-core/img/phone-1.jpg',
+	'wall-st': 'http://digimix.dev/app/uploads/sites/2/2016/07/wallst.jpg'
+);
+
+@each $name, $image in $bg_images {
+	.bg-#{$name} {
+		position: relative;
+		overflow: hidden;
+		&:before {
+			content: "";
+			position: absolute;
+			//width: 200%;
+			//height: 200%;
+			//top: -50%;
+			//left: -50%;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			background: url('#{$image}');
+			//transform: rotate(120deg);
+			//background-position-y: -50px;
+		}
+	}
+}
+
+$overlay_images: (
+	'fractals-black': 'http://atomic.dev/brokerfraud/atomic-core/img/fractals-b.png',
+	'app-mockup': 'http://atomic.dev/brokerfraud/atomic-core/img/app-mockup-1.png',
+	'recover-losses': 'http://digimix.dev/app/uploads/sites/2/2016/07/phone-1.jpg',
+	'wall-st': 'http://digimix.dev/app/uploads/sites/2/2016/07/wallst.jpg',
+	'justice':'http://digimix.dev/app/uploads/sites/2/2016/07/7a05a7_cdd8396ba99246f185fcfb0bf1597c9f-Cropped.jpg',
+	'windows':'http://digimix.dev/app/uploads/sites/2/2016/07/femme-au-bureau-Cropped.jpg',
+);
+
+@each $name, $image in $overlay_images {
+	.bg-overlay-#{$name} {
+		position: relative;
+		overflow: hidden;
+		&:before {
+			content: "";
+			position: absolute;
+			//width: 200%;
+			//height: 200%;
+			//top: -50%;
+			//left: -50%;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			background: linear-gradient(
+			90deg,
+			rgba(gray(light), 1) 15%,
+			rgba(gray(light), .85) 50%,
+			rgba(gray(light), 0) 75%,
+			rgba(gray(dark), 0) 100%
+			),
+			url('#{$image}');
+			//transform: rotate(120deg);
+			//background-position-y: -50px;
+			opacity: 1;
+			background-size: cover;
+		}
+		> * {
+			z-index: 10;
+			position: relative;
+		}
+	}
+}

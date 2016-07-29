@@ -1,0 +1,410 @@
+/*scss/base/_colors.scss*/
+
+/*
+$color1: #00aff0;
+$color2: #3D4A57;
+$color3: #5583B2;
+$color4: #D7F3F6;
+$color5: #35363a;
+$color6: #656565;
+*/
+
+$colors: (
+	1: #90152d,
+	2: #153A7A,
+	3: #08214D,
+	4: #4E84FF,
+	5: #fc4c1c,
+	6: #c81638,
+	7: #ffffff
+);
+
+$grayscale: (
+	'dark': #08214D,
+	9: #191919,
+	8: #323232,
+	7: #4c4c4c,
+	6: #666,
+	5: #7f7f7f,
+	4: #999,
+	3: #b2b2b2,
+	2: #cecece,
+	1: #e5e5e5,
+	'light': #fff
+);
+
+
+// retrieve color from $colors map ie. `color(base, primary)`
+@function color($color-name, $color-variant:null) {
+  // color variant is optional
+  @if ($color-variant != null) {
+    // map inception
+    @return map-get(map-get($colors, $color-name), $color-variant);
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+}
+
+// retrieve color from $colors map ie. `color(base, primary)`
+@function gray($gray-name, $gray-variant:null) {
+  // color variant is optional
+  @if ($gray-variant != null) {
+    // map inception
+    @return map-get(map-get($grayscale, $gray-name), $gray-variant);
+  } @else {
+    @return map-get($grayscale, $gray-name);
+  }
+}
+
+
+@function set-txt-color($color) {
+    @if (lightness( $color ) > 50) {
+      //@return #000000; // Lighter color, return black
+      @return darken($color, 40%)
+    }
+    @else {
+      //@return #FFFFFF; // Darker color, return white
+      @return lighten($color, 40%)
+    }
+}
+
+
+$floor: 63%;
+//$baseColor: color(2);
+
+//_gradient_support
+@function color-stops($item1, $item2:null, $item3:null, $item4:null, $item5:null, $item6:null, $item7:null, $item8:null, $item9:null) {
+  $items: $item2, $item3, $item4, $item5, $item6, $item7, $item8, $item9;
+  $full: $item1;
+  @each $item in $items {
+    @if $item != null {
+      $full: $full, $item;
+    }
+  }
+  @return $full;
+}
+
+
+@each $name, $color in $colors {
+	$step: 1; // Set the initial step value
+
+	//The "<= #" determines the number of steps you want this while loop to create
+
+	@while $step <=10  {
+
+		// darkens color step by step
+		.darken-color-#{$name} li:nth-child(#{$step}) {
+		    // Here we use the SASS darken function and darken our color by 2% each time.  Set this to whatever percentage you like.
+		    background-color: darken($color, ($step * 8%));
+		}
+		// makes color more transparent
+		.fade-color-#{$name} li:nth-child(#{$step}) {
+			background-color: transparentize($color, (($step * .019) * 5));
+		}
+
+		// moves color around color wheel
+		.hue-color-#{$name} li:nth-child(#{$step}) {
+			background-color: adjust-hue($color, $step*8);
+		}
+
+
+		// Increment the step up by 1 so it continues until you've reached 10 (which you specified at the beginning of the function)
+		$step: $step + 1;
+	}
+
+	.color-#{$name} {
+		background: $color;
+		&.color {
+			&::after {
+				content: "#{$color}";
+				display: block;
+				color: set-txt-color(#fff);
+			}
+		}
+	}
+	.btn-#{$name} {
+		background: $color;
+		color: white;
+		text-transform: uppercase;
+		&:hover {
+			background: lighten($color, 10%);
+			color: white;
+		}
+	}
+	.bg-#{$name} {
+		background: $color;
+	}
+	.fill-#{$name} {
+		&svg {
+			fill: $color;
+		}
+		svg {
+			fill: $color;
+		}
+	}
+	.bg-studiolight-c-#{$name} {
+	  background:
+	    radial-gradient(circle at center top,
+	      color-stops(lighten($color, 10%),
+	        transparentize(lighten($color, 10%), 1) 60%)
+	    ),
+	    radial-gradient(circle at left $floor,
+	      color-stops($color,
+	        transparentize($color, 1) 40%)
+	    ),
+	    radial-gradient(circle at right $floor,
+	      color-stops($color,
+	        transparentize($color, 1) 40%)
+	    ),
+	    linear-gradient(
+	      darken($color, 30%)  0%,
+	      lighten($color, 10%) $floor,
+	      darken($color, 5%)   $floor + 3%,
+	      lighten($color, 10%) $floor + 20%,
+	      lighten($color, 5%)  100%
+	    )
+	  ;
+	}
+	.bg-radial-c-#{$name} {
+	  background:
+	    radial-gradient(circle at center top,
+	      color-stops(lighten($color, 10%),
+	        transparentize(lighten($color, 10%), 1) 60%)
+	    ),
+	    radial-gradient(circle at left $floor,
+	      color-stops($color,
+	        transparentize($color, 1) 40%)
+	    ),
+	    radial-gradient(circle at right $floor,
+	      color-stops($color,
+	        transparentize($color, 1) 40%)
+	    ),
+	    linear-gradient(
+	      darken($color, 30%)  0%,
+	      lighten($color, 5%)  100%
+	    )
+	  ;
+	}
+	.bg-radial-c-left-#{$name} {
+	  background:
+	    radial-gradient(circle at left top,
+	      color-stops(lighten($color, 10%),
+	        transparentize(lighten($color, 10%), 1) 60%)
+	    ),
+	    radial-gradient(circle at left $floor,
+	      color-stops($color,
+	        transparentize($color, 1) 40%)
+	    ),
+	    radial-gradient(circle at right $floor,
+	      color-stops($color,
+	        transparentize($color, 1) 40%)
+	    ),
+	    linear-gradient(
+	      darken($color, 30%)  0%,
+	      lighten($color, 5%)  100%
+	    )
+	  ;
+	}
+
+}
+
+
+
+@each $name, $color in $grayscale {
+	.greyscale-#{$name} {
+		background: $color;
+		&.color {
+			&::after {
+				content: "#{$color}";
+				display: block;
+				color: set-txt-color(#fff);
+			}
+		}
+	}
+	.btn-greyscale-#{$name} {
+		background: $color;
+		color: white;
+		text-transform: uppercase;
+		&:hover {
+			background: lighten($color, 10%);
+			color: white;
+		}
+	}
+	.bg-greyscale-#{$name} {
+		background: $color;
+	}
+	.fill-greyscale-#{$name} {
+		&svg {
+			fill: $color;
+		}
+		svg {
+			fill: $color;
+		}
+	}
+
+	.bg-diagnol-up-#{$name} {
+		background:
+		    linear-gradient(45deg,
+		      darken($color, 30%)  0%,
+		      lighten($color, 20%) $floor,
+		      lighten($color, 30%) $floor + 20%,
+		      lighten($color, 40%)  100%
+		    )
+		;
+	}
+
+	.bg-studiolight-#{$name} {
+	  background:
+	    radial-gradient(circle at center top,
+	      color-stops(lighten($color, 10%),
+	        transparentize(lighten($color, 10%), 1) 60%)
+	    ),
+	    radial-gradient(circle at left $floor,
+	      color-stops($color,
+	        transparentize($color, 1) 40%)
+	    ),
+	    radial-gradient(circle at right $floor,
+	      color-stops($color,
+	        transparentize($color, 1) 40%)
+	    ),
+	    linear-gradient(
+	      darken($color, 30%)  0%,
+	      lighten($color, 10%) $floor,
+	      darken($color, 5%)   $floor + 3%,
+	      lighten($color, 10%) $floor + 20%,
+	      lighten($color, 5%)  100%
+	    )
+	  ;
+	}
+	.bg-radial-#{$name} {
+	  background:
+	    radial-gradient(circle at center top,
+	      color-stops(lighten($color, 10%),
+	        transparentize(lighten($color, 10%), 1) 60%)
+	    ),
+	    radial-gradient(circle at left $floor,
+	      color-stops($color,
+	        transparentize($color, 1) 40%)
+	    ),
+	    radial-gradient(circle at right $floor,
+	      color-stops($color,
+	        transparentize($color, 1) 40%)
+	    ),
+	    linear-gradient(
+	      darken($color, 30%)  0%,
+	      lighten($color, 5%)  100%
+	    )
+	  ;
+	}
+	.bg-radial-left-#{$name} {
+	  background:
+	    radial-gradient(circle at left top,
+	      color-stops(lighten($color, 10%),
+	        transparentize(lighten($color, 10%), 1) 60%)
+	    ),
+	    radial-gradient(circle at center $floor,
+	      color-stops($color,
+	        transparentize($color, 1) 40%)
+	    ),
+	    radial-gradient(circle at right $floor,
+	      color-stops($color,
+	        transparentize($color, 1) 40%)
+	    ),
+	    linear-gradient(
+	      darken($color, 30%)  0%,
+	      lighten($color, 5%)  100%
+	    )
+	  ;
+	}
+
+
+}
+
+
+.upperDiv {
+width:500px;
+height: 40px;
+
+background-image: -ms-radial-gradient(center bottom, ellipse farthest-corner, #E4E4E4 0%, #FDFDFD 150%);
+background-image: -moz-radial-gradient(center bottom, ellipse farthest-corner, #E4E4E4 0%, #FDFDFD 150%);
+background-image: -o-radial-gradient(center bottom, ellipse farthest-corner, #E4E4E4 0%, #FDFDFD 150%);
+background-image: -webkit-gradient(radial, center bottom, 0, center bottom, 567, color-stop(0, #E4E4E4), color-stop(1.5, #FDFDFD));
+background-image: -webkit-radial-gradient(center bottom, ellipse farthest-corner, #E4E4E4 0%, #FDFDFD 150%);
+background-image: radial-gradient(center bottom, ellipse farthest-corner, #E4E4E4 0%, #FDFDFD 150%);
+
+}
+
+.lowerDiv {
+width:500px;
+height: 40px;
+
+background-image: -ms-radial-gradient(center top, ellipse farthest-corner, #FDFDFD 0%, #F0F0F0 80%);
+background-image: -moz-radial-gradient(center top, ellipse farthest-corner, #FDFDFD 0%, #F0F0F0 80%);
+background-image: -o-radial-gradient(center top, ellipse farthest-corner, #FDFDFD 0%, #F0F0F0 80%);
+background-image: -webkit-gradient(radial, center top, 0, center top, 567, color-stop(0, #FDFDFD), color-stop(0.8, #F0F0F0));
+background-image: -webkit-radial-gradient(center top, ellipse farthest-corner, #FDFDFD 0%, #F0F0F0 80%);
+background-image: radial-gradient(center top, ellipse farthest-corner, #FDFDFD 0%, #F0F0F0 80%);
+}
+
+
+
+body {
+	background: linear-gradient(180deg, lighten(gray(3),10%) 0%, lighten(gray(2),20%) 50%) ;
+}
+
+.gradient {
+	background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(25,25,25,1) 60%, rgba(50,50,50,1) 61%, rgba(76,76,76,1) 71%, rgba(102,102,102,1) 100%);
+}
+
+.colors:before,
+.colors:after {
+	content: " ";
+	display: table;
+}
+
+.colors:after {
+	clear: both;
+}
+.colors {
+	*zoom: 1;
+}
+.color{
+	width:100px;
+	height:100px;
+	float:left;
+	margin-right:10px;
+	padding:10px;
+	color:#fff;
+	//font-size:12px;
+}
+
+.colorFixed{
+	position: fixed;
+	z-index: 3000;
+	right: 0;
+	top: 0;
+	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.57);
+	.color{
+		float: none;
+		margin-right:0;
+		width:70px;
+		height:50px;
+	}
+}
+
+.entry-title {
+	color: gray(dark);
+}
+
+.entry-meta {
+	@extend .text--deci;
+	> p, .author, time {
+		color: gray(5);
+	}
+}
+
+.post-single {
+	a {
+		color: color(4);
+	}
+}

@@ -5,7 +5,16 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import "base/_base";
+@import "base/_mixins";
+
 @import "common/global";
+
+@import "modules/_modules";
+@import "atoms/_atoms";
+@import "molecules/_molecules";
+@import "organisims/_organisims";
+
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";

@@ -1,0 +1,94 @@
+/*scss/organisims/_storyBlock.scss*/
+
+.storyBlock{
+
+}
+
+.story-block {
+	-webkit-background-size: cover;
+	background-size: cover !important;
+	margin: auto -15px;
+	&.dark {
+		h1,h2,h3,h4,h5,h6 {
+			color: gray(dark);
+		}
+		p,ul,li {
+			color: gray(9);
+		}
+	}
+	&.light {
+		h1,h2,h3,h4,h5,h6 {
+			color: gray(light);
+		}
+		p,ul,li {
+			color: gray(2);
+		}
+	}
+	.summary {
+		.entry-title {
+			//text-transform: uppercase;
+			//font-size: 3em;
+		}
+		.video-cover {
+			margin-top: 30px;
+			max-width: 100%;
+			height: auto;
+			@media (min-width: breakpoint('large')) {
+				max-width: 65%;
+
+			}
+		}
+		.btn:last-child {
+			margin-top: 15px;
+		}
+	}
+	.wrap {
+		padding: 10% 8%;
+		&.left, &.right {
+			@media (min-width: breakpoint('large')) {
+				width: 50%;
+			}
+		}
+		&.center {
+			text-align: center;
+			max-width: 90%;
+			margin: auto;
+			//padding-bottom: 7%;
+		}
+		+ img {
+			margin-top: -10%;
+		}
+	}
+}
+
+.pill-bg {
+	position: relative;
+	overflow: hidden;
+	background-color: map_get($colors, 1);
+	&:before {
+		content: "";
+		position: absolute;
+		width: 200%;
+		height: 200%;
+		top: -50%;
+		left: -50%;
+		z-index: 1;
+		background: url('http://atomic.dev/atomic-docs/atomic-core/img/terra-tech.png') 0 0 no-repeat;
+		//-webkit-transform: rotate(120deg);
+		//-moz-transform: rotate(120deg);
+		//-ms-transform: rotate(120deg);
+		//-o-transform: rotate(120deg);
+		transform: rotate(120deg);
+		background-position-y: -50px;
+	}
+}
+
+.block-reviews {
+	.star-rating {
+		color: #D4AF37;
+	}
+	.cols-2 {
+		> #client-reviews {
+		}
+	}
+}

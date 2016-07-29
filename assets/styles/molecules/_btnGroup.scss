@@ -1,0 +1,14 @@
+/*scss/molecules/_btnGroup.scss*/
+
+.btnGroup{
+	max-width:400px;
+	margin:auto;
+	.btns{
+		display:block;
+		width:100%;
+		margin-bottom:12px;
+		&:last-of-type{
+			margin-bottom:0;
+		}
+	}
+}

@@ -1,0 +1,61 @@
+/*scss/organisims/_recent-cases.scss*/
+
+.recent-cases{
+	text-align: center;
+	margin: 80px;
+	p {
+		color: gray(4);
+	}
+	.cases {
+		margin: 30px 30px;
+		list-style: none;
+		padding: 0;
+		display: flex;
+		> li {
+			flex: 1;
+			padding: 0 20px;
+			.copy {
+				display: flex;
+				align-items: flex-start;
+			    position: relative;
+			    min-height: 160px;
+			    h3 {
+					margin: auto;
+					position: relative;
+					&:after {
+						display: block;
+						height: 4px;
+						width: 90%;
+						background: gray(1);
+						content: "";
+						margin: 20px auto 0;
+					}
+			    }
+			}
+			h3 {
+				@include responsive-text-size('deci');
+			}
+		}
+		a {
+			color: color(4);
+			span {
+				display: block;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+figure.recover-losses {
+	position: relative;
+	figcaption {
+		//margin: 180px 100px;
+		width: 50%;
+		h2 {
+			color: gray(9);
+		}
+		p {
+			color: gray(8);
+		}
+	}
+}

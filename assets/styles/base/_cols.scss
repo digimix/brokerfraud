@@ -1,0 +1,106 @@
+$gap: 15px;
+
+.flex {
+	display:flex;
+	flex-direction: column;
+	@media (min-width: breakpoint('large')) {
+		flex-direction: row;
+		flex-flow: row wrap;
+	}
+	&.reverse {
+		flex-direction: column-reverse;
+		@media (min-width: breakpoint('large')) {
+			flex-direction: row-reverse;
+		}
+	}
+	> * {
+		flex: 1;
+	}
+	> .divider {
+		background: gray(1);
+		height: 100px;
+		flex: 0 0 2px;
+		margin: 0 $gap*2;
+	}
+}
+
+$flex-align: (
+	top: flex-start,
+	bottom: flex-end,
+	center: center
+);
+
+@each $name, $position in $flex-align {
+	.align-#{$name} {
+		align-self: $position;
+		align-items: $position;
+	}
+}
+
+
+$cols: (
+	1: percentage(100/100),
+	2: percentage(50/100),
+	3: percentage(33.333/100),
+	4: 25%,
+	5: 20%,
+	6: 16.666%
+);
+
+@each $name, $percent in $cols {
+	.cols-#{$name} {
+		@extend .flex;
+		> * {
+			//flex-basis: 100%;
+			flex: 0 0 $percent;
+			@media (min-width: breakpoint('medium')) {
+				//flex-basis: $percent;
+				flex: 0 0 $percent;
+			}
+		}
+		> .summary {
+			padding: 10% 8%;
+			align-items: center;
+			align-self: center;
+			&.hero {
+				padding: 5% 4%;
+				//flex-basis: 65%;
+				flex: 0 0 65%;
+			}
+		}
+		> figure {
+			margin: 0;
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+
+.sitemap-links {
+	padding: 10%;
+	> .widget {
+		display: none;
+	}
+	ul {
+		@extend .list-unstyled;
+		@extend .cols-4;
+		margin-right: -$gap;
+		>li {
+			margin-bottom: $gap/2;
+			@include responsive-text-size('deci');
+			padding-right: $gap;
+		}
+	}
+	$class-slug: show !default
+
+	@for $i from 1 through 4 {
+		&.#{$class-slug}-#{$i} {
+			> .widget:nth-child(#{$i}) {
+				display: block;
+			}
+		}
+	}
+}

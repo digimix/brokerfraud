@@ -1,0 +1,66 @@
+@import "_colors";
+@import "_typesetting";
+@import "_cols";
+@import "_bg";
+@import "_fonts";
+@import "_btn";
+
+
+body {
+	padding-top: 85px;
+}
+a {
+	color: map_get($colors, 4);
+	&:hover {
+		color: lighten(map_get($colors, 4), 10%);
+	}
+}
+
+.page-content {
+	background: white;
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 30px 40px 50px;
+	@media (min-width: breakpoint('large')) {
+		padding: 60px 80px 100px;
+	}
+}
+
+
+.white-paper {
+	@extend .page-content;
+	@media (min-width: breakpoint('large')) {
+		width: 850px;
+		margin: 30px auto;
+		padding: 60px 80px 100px;
+	}
+	@media (min-width: breakpoint('x-large')) {
+		width: 960px;
+	}
+}
+
+body.single-post {
+	main {
+		> article.post {
+			@extend .white-paper;
+		}
+	}
+}
+
+
+.page-wrapper {
+	max-width: 100%;
+	margin: 30px;
+	@media (min-width: breakpoint('large')) {
+		width: 850px;
+		margin: 30px auto;
+	}
+	@media (min-width: breakpoint('x-large')) {
+		width: 960px;
+	}
+	&.alt {
+		@extend .white-paper;
+	}
+}
