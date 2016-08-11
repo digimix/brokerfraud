@@ -1,12 +1,17 @@
+@import "base/colors";
 @import "common/variables";
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+@import "../../bower_components/css-hamburgers/_sass/hamburgers/hamburgers.scss";
 // endbower
 
-@import "base/_base";
-@import "base/_mixins";
+@import "base/base";
+@import "base/mixins";
+@import "base/breakpoints";
+@import "base/navsetting";
 
 @import "common/global";
 
@@ -15,12 +20,18 @@
 @import "molecules/_molecules";
 @import "organisims/_organisims";
 
+@import "components/links";
 @import "components/buttons";
 @import "components/comments";
+@import "components/modal";
 @import "components/forms";
 @import "components/grid";
 @import "components/wp-classes";
+@import "components/badges";
+@import "components/sitemap";
 @import "layouts/header";
+@import "layouts/navbar";
+@import "layouts/offcanvas";
 @import "layouts/sidebar";
 @import "layouts/footer";
 @import "layouts/pages";

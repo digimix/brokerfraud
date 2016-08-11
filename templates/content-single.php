@@ -19,4 +19,4 @@
 </div>
 <?php get_template_part('templates/entry-related-cases'); ?>
 <?php get_template_part('templates/entry-footer'); ?>
-<?php get_template_part('templates/footer-badges'); ?>
+<?php get_template_part('templates/badges-awards'); ?>

@@ -1,0 +1,18 @@
+.page-header {
+	margin-top: 0;
+}
+
+.overview {
+	.page-header {
+		>h2 {
+			@extend .text--deci;
+			@extend .caps;
+			margin: 0;
+			margin-bottom: 0;
+		}
+		>h1 {
+			color: color(3);
+			margin: 0;
+		}
+	}
+}

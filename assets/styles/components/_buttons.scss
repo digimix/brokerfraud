@@ -1,0 +1,94 @@
+.btns {
+	display: inline-block;
+	background: #ccc;
+	padding: 10px 0;
+	width: 142px;
+	color: #fff;
+	opacity: 1;
+	cursor: pointer;
+	-webkit-transition: all .25s;
+	transition: all .25s;
+	position: relative;
+	border: none;
+	font-family: $font2;
+	//font-size: 16px;
+	text-align: center;
+	text-decoration: none
+}
+
+.btn {
+	padding: 6px 12px 6px;
+}
+
+.btns:hover {
+  color: #fff;
+  text-decoration: none
+}
+
+.btns:active {
+  top: 1px
+}
+
+.btnGroup {
+  text-align: center;
+  margin-bottom: 100px
+}
+
+	a {
+		$icons: (
+			cart: (char: "\f370", color: #55acee),
+		);
+
+		@each $link-ico, $icon in $icons {
+
+			&[href*="#{$link-ico}"] {
+				display: inline-block;
+				width: 2.5em;
+				height: 2.5em;
+				border-radius: 50%;
+				text-decoration: none;
+				color: white;
+				text-align: center;
+				background-color: map-get($icon, color);
+				color: black;
+				&:hover {
+					background-color: lighten(map-get($icon, color), 10%);
+					//color: map-get($icon, color);
+					color:white;
+				}
+				&:before {
+					content: map-get($icon, char);
+					font-family: "Ionicons";
+				}
+			}
+		}
+	}
+
+.btn {
+	border-radius: 2px;
+	letter-spacing: -0.04em;
+	padding: 10px 18px;
+	&.btn-fw {
+		width: 100%;
+	}
+	&.btn-outline {
+		text-transform: uppercase;
+		background: gray(light);
+		color: color(3);
+		border: 6px solid gray(3);
+		transition: .25s ease all;
+		&:hover, &:focus {
+			border: 6px solid gray(2);
+		}
+	}
+}
+
+.btn-arrow {
+	span {
+		&:after {
+			content: "\f105";
+			font-family: "FontAwesome";
+			margin-left: 10px;
+		}
+	}
+}

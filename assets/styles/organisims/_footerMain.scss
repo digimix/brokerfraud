@@ -1,43 +1,5 @@
 /*scss/organisims/_footerMain.scss*/
 
-.footerMain{
-	//text-align: center;
-	padding: 80px 30px 40px;
-	color: gray(light);
-	background: gray(dark);
-	img.logo {
-		margin:0 0 30px;
-		max-width: 336px;
-	}
-	p {
-		@include responsive-text-size('centi');
-		color: gray(4);
-	}
-	.copyright {
-		float: left;
-		padding: 15px 0;
-		@include responsive-text-size('deci');
-	}
-	a {
-		@include responsive-text-size('deci');
-	}
-	.footer-bottom {
-		border-top: 1px solid color(2);
-		padding-top: 2em;
-		margin-top: 2em;
-	}
-	.navbar-nav {
-		> li {
-			a {
-				background: transparent;
-				color: gray(2);
-				&:hover {
-					color: color(4);
-				}
-			}
-		}
-	}
-}
 
 .address {
 	color: gray(3);
@@ -182,27 +144,4 @@ $page-curl-3:linear-gradient(
 .curl:hover:before,
 .curl:hover:after {
 	box-shadow: 0 24px 30px rgba(0, 0, 0, .23);
-}
-
-
-.badge-list {
-	display: flex;
-	list-style: none;
-	padding: 0;
-	text-align: center;
-	margin: 30px 0;
-	> * {
-		flex: 1;
-		figure {
-			display: flex;
-			align-items: center;
-			height: 140px;
-			img {
-				width: auto;
-				max-height: 100%;
-				max-width: 70%;
-				margin: auto;
-			}
-		}
-	}
 }

@@ -7,7 +7,7 @@
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-<ul class="list-unstyled">
+<ul class="cases">
 <?php while (have_posts()) : the_post(); ?>
 	<li><?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?></li>
 <?php endwhile; ?>

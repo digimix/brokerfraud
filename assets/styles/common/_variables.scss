@@ -1,9 +1,22 @@
 // Glyphicons font path
 $icon-font-path:        "../fonts/";
+$asset-path: "../images/";
 
 // Grid settings
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
+$base-font-size: 20px;
+
 // Colors
-$brand-primary:         #27ae60;
+$brand-primary: color(4);
+
+$nav-height: 90px;
+$nav-link-size: 1em;
+
+$gap: 30px;
+$offset-top: $nav-height + $gap;
+
+$letterspacing: -.045em;
+
+$hamburger-layer-color: gray(light);

@@ -19,9 +19,33 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+		$("nav.nav-primary").headroom({
+			"offset": 205,
+			"tolerance": 5,
+			"classes": {
+				"initial": "animated",
+				"pinned": "slideDown",
+				"unpinned": "slideUp"
+			}
+		});
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
+		$('[data-toggle="offcanvas"]').click(function () {
+			$('.offcanvas-sidebar').toggleClass('active');
+		});
+
+		var $hamburger = $(".hamburger");
+		$hamburger.on("click", function(e) {
+			$hamburger.toggleClass("is-active");
+			 if ($hamburger.attr('aria-expanded') === "true") {
+				$hamburger.attr("aria-expanded","false");
+			} else {
+				$hamburger.attr("aria-expanded","true");
+			}
+			// Do something else, like open/close menu
+		});
       }
     },
     // Home page

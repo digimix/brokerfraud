@@ -1,14 +1,8 @@
 <header class="banner">
 	<div class="container-fluid">
-		<nav class="navbar nav-primary navbar-fixed-top bg-radial-light">
+		<nav class="navbar nav-primary">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
 				<a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>">
 					<?php
 					// check to see if the logo exists and add it to the page
@@ -26,17 +20,24 @@
 					<?php endif; ?>
 				</a>
 			</div>
-
-			<div class="collapse navbar-collapse">
-				<?php
-				if (has_nav_menu('primary_navigation')) :
-					wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav']);
-				endif;
-				?>
+			<div class="navbar-header-collapse">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target="#flyout-menu" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
 				<?php
 				// check to see if the nav_microcopy exists and add it to the navbar
 				if ( get_theme_mod( 'mix_nav_microcopy' ) ) :
 					echo get_theme_mod( 'mix_nav_microcopy' );
+				endif;
+				?>
+			</div>
+			<div class="collapse navbar-collapse">
+				<?php
+				if (has_nav_menu('primary_navigation')) :
+					wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav']);
 				endif;
 				?>
 			</div>

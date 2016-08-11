@@ -1,15 +1,13 @@
-$gap: 15px;
-
 .flex {
 	display:flex;
 	flex-direction: column;
-	@media (min-width: breakpoint('large')) {
+	@media (min-width: breakpoint('medium')) {
 		flex-direction: row;
 		flex-flow: row wrap;
 	}
 	&.reverse {
 		flex-direction: column-reverse;
-		@media (min-width: breakpoint('large')) {
+		@media (min-width: breakpoint('medium')) {
 			flex-direction: row-reverse;
 		}
 	}
@@ -20,7 +18,7 @@ $gap: 15px;
 		background: gray(1);
 		height: 100px;
 		flex: 0 0 2px;
-		margin: 0 $gap*2;
+		margin: 0 $gap;
 	}
 }
 
@@ -39,37 +37,58 @@ $flex-align: (
 
 
 $cols: (
-	1: percentage(100/100),
-	2: percentage(50/100),
-	3: percentage(33.333/100),
-	4: 25%,
-	5: 20%,
-	6: 16.666%
+	1: 1 * 100%,
+	2: 1 / 2 *100%,
+	3: 1 / 3 *100%,
+	4: 1 / 4 *100%,
+	5: 1 / 5 *100%,
+	6: 1 / 6 *100%
 );
+
+
 
 @each $name, $percent in $cols {
 	.cols-#{$name} {
 		@extend .flex;
 		> * {
-			//flex-basis: 100%;
-			flex: 0 0 $percent;
+			flex-basis: 100%;
+			//flex: 0 0 $percent;
+			flex:1;
 			@media (min-width: breakpoint('medium')) {
-				//flex-basis: $percent;
-				flex: 0 0 $percent;
+				//flex-basis: $percent * 100%;
+				//flex: 0 0 $percent*100%;
+				flex: $percent;
+				width: $percent;
+				flex-grow: inherit;
 			}
 		}
 		> .summary {
-			padding: 10% 8%;
 			align-items: center;
 			align-self: center;
-			&.hero {
-				padding: 5% 4%;
-				//flex-basis: 65%;
-				flex: 0 0 65%;
+			@media (min-width: breakpoint('medium')) {
+				padding-right: 0;
 			}
 		}
 		> figure {
 			margin: 0;
+			&.hero {
+				&.align-bottom {
+					text-align: center;
+					@media (max-width: breakpoint('medium')) {
+						flex-basis: 100%;
+						width: 100%;
+					}
+					@media (min-width: breakpoint('medium')) {
+						text-align: right;
+					}
+					img {
+						margin: 0 auto $gap;
+						@media (min-width: breakpoint('medium')) {
+					    	margin: 0 $gap*2 $gap*2 auto;
+					    }
+					}
+				}
+			}
 			img {
 				max-width: 100%;
 				height: auto;
@@ -78,29 +97,26 @@ $cols: (
 	}
 }
 
-
-.sitemap-links {
-	padding: 10%;
-	> .widget {
-		display: none;
-	}
-	ul {
-		@extend .list-unstyled;
-		@extend .cols-4;
-		margin-right: -$gap;
-		>li {
-			margin-bottom: $gap/2;
-			@include responsive-text-size('deci');
-			padding-right: $gap;
+.hero-cols {
+	@extend .flex;
+	> :nth-child(1) {
+		width: 100%;
+		@media (min-width: breakpoint('medium')) {
+			flex: 60%;
 		}
 	}
-	$class-slug: show !default
+	> :nth-child(2) {
+		flex: 1;
+	}
+}
 
-	@for $i from 1 through 4 {
-		&.#{$class-slug}-#{$i} {
-			> .widget:nth-child(#{$i}) {
-				display: block;
-			}
+.summary {
+	@extend .adjust-padding;
+	&.hero {
+		padding: $gap;
+	    flex-grow: inherit;
+		@media (min-width: breakpoint('large')) {
+			padding: $gap*2 0px $gap*2 $gap*2;
 		}
 	}
 }

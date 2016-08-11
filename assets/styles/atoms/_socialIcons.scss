@@ -101,11 +101,13 @@
 .social-sticky {
 	position: fixed;
 	left: 0;
-	top: 300px !important;
+	top: $gap !important;
 	bottom: auto;
 	@extend .slide-in;
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
+    @include responsive-nav-adjust-margin('base');
+    z-index: 1000;
     .social-icons {
 	    li {
 		    display: block;

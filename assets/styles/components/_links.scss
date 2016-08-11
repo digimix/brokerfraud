@@ -1,0 +1,42 @@
+a {
+	color: color(4);
+	&:hover, &:focus {
+		color: lighten(color(4), 10%);
+	}
+	$link-icons: (
+		cart:   (char: "\f370", font: "Ionicons", color: grey(light)),
+	);
+
+	@each $link, $icon in $link-icons {
+		&[href*="#{$link}"] {
+			span {
+				display: inline-block;
+				width: 0;
+				height: 0;
+				overflow: hidden;
+			}
+			&:before {
+				color: map-get($icon, color);
+				font-family: map-get($icon, font);
+				content: map-get($icon, char);
+				display: inline-block;
+				padding-right: $gap/5;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				speak: none;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none;
+				text-rendering: auto;
+				line-height: 1;
+			}
+			&:hover {
+				color: map-get($icon, color);
+				&:before {
+					color: map-get($icon, color);
+				}
+			}
+		}
+	}
+}

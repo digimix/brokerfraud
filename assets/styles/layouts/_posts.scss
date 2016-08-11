@@ -1,0 +1,8 @@
+body.single-post {
+	@include responsive-nav-adjust-margin('base');
+	main {
+		> article.post {
+			@extend .white-paper;
+		}
+	}
+}

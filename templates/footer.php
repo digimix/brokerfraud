@@ -31,13 +31,13 @@
 		</div>
     	<div class="footer-bottom clearfix">
 			<?php
+			if (has_nav_menu('footer_navigation')) :
+				wp_nav_menu(['theme_location' => 'footer_navigation', 'menu_class' => 'nav navbar-nav navbar-right']);
+			endif;
+
 			// check to see if the logo exists and add it to the page
 			if ( get_theme_mod( 'mix_footer_copyright' ) ) :
 				echo '<p class="copyright">' . get_theme_mod( 'mix_footer_copyright' ) . '</p>';
-			endif;
-
-			if (has_nav_menu('footer_navigation')) :
-				wp_nav_menu(['theme_location' => 'footer_navigation', 'menu_class' => 'nav navbar-nav navbar-right']);
 			endif;
 			?>
     	</div>

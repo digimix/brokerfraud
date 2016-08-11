@@ -8,6 +8,43 @@ $color4: #D7F3F6;
 $color5: #35363a;
 $color6: #656565;
 */
+$color-trans-amount: .6;
+
+$palettes: (
+	primary: (
+		light: #003e7e,
+		base: #061f5C,
+		trans: transparentize(#061f5c, $color-trans-amount)
+	),
+	secondary: (
+		base: #4b90cd,
+	),
+	accent: (
+		base: #ff7000,
+	),
+	greys: (
+		light: #fff,
+		base: #818285,
+	),
+	bg: (
+		light: #fff,
+		base: #f1f5f8,
+		dark: #000,
+	),
+	fg: (
+		base: #f1f5f8,
+		dark: #cfdde7,
+	),
+	txt: (
+		light: #fff,
+		base: #818285
+	)
+);
+
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}
+
 
 $colors: (
 	1: #90152d,
@@ -93,17 +130,17 @@ $floor: 63%;
 	@while $step <=10  {
 
 		// darkens color step by step
-		.darken-color-#{$name} li:nth-child(#{$step}) {
+		.darken-color-#{$name} >:nth-child(#{$step}) {
 		    // Here we use the SASS darken function and darken our color by 2% each time.  Set this to whatever percentage you like.
 		    background-color: darken($color, ($step * 8%));
 		}
 		// makes color more transparent
-		.fade-color-#{$name} li:nth-child(#{$step}) {
+		.fade-color-#{$name} >:nth-child(#{$step}) {
 			background-color: transparentize($color, (($step * .019) * 5));
 		}
 
 		// moves color around color wheel
-		.hue-color-#{$name} li:nth-child(#{$step}) {
+		.hue-color-#{$name} >:nth-child(#{$step}) {
 			background-color: adjust-hue($color, $step*8);
 		}
 
@@ -126,9 +163,9 @@ $floor: 63%;
 		background: $color;
 		color: white;
 		text-transform: uppercase;
-		&:hover {
+		&:hover, &:focus {
 			background: lighten($color, 10%);
-			color: white;
+			color: white !important;
 		}
 	}
 	.bg-#{$name} {

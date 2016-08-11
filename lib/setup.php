@@ -28,7 +28,8 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus([
     'primary_navigation' => __('Primary Navigation', 'sage'),
-    'footer_navigation' => __('Footer Navigation', 'sage')
+    'footer_navigation' => __('Footer Navigation', 'sage'),
+	'social_navigation' => __('Social Navigation', 'sage'),
   ]);
 
   // Enable post thumbnails
@@ -88,7 +89,8 @@ function display_sidebar() {
     is_front_page(),
     is_page_template('template-custom.php'),
     is_single(),
-    is_page()
+    is_page(),
+    is_archive(),
   ]);
 
   return apply_filters('sage/display_sidebar', $display);

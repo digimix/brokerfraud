@@ -1,0 +1,279 @@
+$nav-height: 90px;
+$nav-link-size: 1em;
+
+$nav-sizing: (
+	'milli': (
+	    'small': (
+			'font-size-em': 0.702em,
+			'font-size': 12px,
+			'nav-height': 90px,
+			'padding-top': 4
+	    ),
+	    'large': (
+			'font-size-em': 0.579em,
+			'font-size': 12px,
+			'nav-height': 90px,
+			'padding-top': 6
+	    )
+	),
+	'centi': (
+	    'small': (
+			'font-size-em': 0.79em,
+			'font-size': 12px,
+			'nav-height': 90px,
+			'padding-top': 4
+	    ),
+	    'large': (
+			'font-size-em': 0.694em,
+			'font-size': 12px,
+			'nav-height': 90px,
+			'padding-top': 6
+	    )
+	),
+	'deci': (
+		'small': (
+			'font-size-em': 0.889em,
+			'font-size': 14px,
+			'nav-height': 90px,
+			'padding-top': 4
+		),
+		'large': (
+			'font-size-em': 0.833em,
+			'font-size': 14px,
+			'nav-height': 90px,
+			'padding-top': 6
+		)
+	),
+	'base': (
+		'small': (
+			'font-size-em': .9em,
+			'font-size': 14px,
+			'nav-height': 60px,
+			'padding-top': 5
+		),
+		'medium': (
+			'font-size-em': .9em,
+			'font-size': 14px,
+			'nav-height': 60px,
+			'padding-top': 7
+		),
+		'large': (
+			'font-size-em': 1em,
+			'font-size': 16px,
+			'nav-height': 90px,
+			'padding-top': 6
+		)
+	),
+	'deca': (
+		'small': (
+			'font-size-em': 1.125em,
+			'font-size': 18px,
+			'nav-height': 90px,
+			'padding-top': 4
+		),
+		'large': (
+			'font-size-em': 1.2em,
+			'font-size': 20px,
+			'nav-height': 90px,
+			'padding-top': 6
+		)
+	),
+	'hecto': (
+		'small': (
+			'font-size-em': 1.266em,
+			'font-size': 22px,
+			'nav-height': 90px,
+			'padding-top': 4
+		),
+		'large': (
+			'font-size-em': 1.44em,
+			'font-size': 24px,
+			'nav-height': 90px,
+			'padding-top': 6
+		)
+	),
+	'kilo': (
+		'small': (
+			'font-size-em': 1.424em,
+			'font-size': 24px,
+			'nav-height': 90px,
+			'padding-top': 4
+		),
+		'large': (
+			'font-size-em': 1.728em,
+			'font-size': 28px,
+			'nav-height': 90px,
+			'padding-top': 6
+		)
+	),
+	'mega': (
+		'small': (
+			'font-size-em': 1.602em,
+			'font-size': 36px,
+			'nav-height': 90px,
+			'padding-top': 4
+		),
+		'large': (
+			'font-size-em': 2.074em,
+			'font-size': 40px,
+			'nav-height': 90px,
+			'padding-top': 6
+		)
+	)
+);
+
+// lib/functions/_typography.scss
+@function nav-breakpoints-for($nav-size) {
+  $nav-breakpoints: map-get($nav-sizing, $nav-size);
+
+  @if $nav-breakpoints {
+    @return $nav-breakpoints;
+  }
+
+  @warn "Nav size '#{$nav-size}' not found in $nav-sizing";
+}
+
+@function nav-properties-for($nav-size, $breakpoint-name) {
+  $nav-breakpoints: nav-breakpoints-for($nav-size);
+  $nav-properties: map-get($nav-breakpoints, $breakpoint-name);
+
+  @if $nav-properties {
+    @return $nav-properties;
+  }
+
+  @warn "Breakpoint '#{$breakpoint-name}' for nav size '#{$nav-size}' was not found";
+}
+
+// lib/mixins/_responsive.scss
+@mixin respond-above($breakpoint-name) {
+  $breakpoint-value: breakpoint($breakpoint-name);
+
+  @if $breakpoint-value {
+    @media screen and (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}
+
+// lib/mixins/_typography.scss
+@mixin nav-size($nav-size, $breakpoint-name: 'small') {
+	$nav-size-properties: nav-properties-for($nav-size, $breakpoint-name);
+
+	@if $nav-size-properties {
+		height: map-get($nav-size-properties, 'nav-height');
+	}
+}
+
+@mixin responsive-nav-size($nav-size, $default-breakpoint: 'small') {
+	@include nav-size($nav-size, $default-breakpoint);
+
+	$nav-breakpoints-map: nav-breakpoints-for($nav-size);
+	$nav-breakpoints-keys: map-keys($nav-breakpoints-map);
+
+	@each $breakpoint-name in $nav-breakpoints-keys {
+		@if $breakpoint-name != $default-breakpoint {
+			@include respond-above($breakpoint-name) {
+			@include nav-size($nav-size, $breakpoint-name);
+			}
+		}
+	}
+}
+
+
+// lib/mixins/_typography.scss
+@mixin navbrand-size($nav-size, $breakpoint-name: 'small') {
+	$nav-size-properties: nav-properties-for($nav-size, $breakpoint-name);
+
+	@if $nav-size-properties {
+		height: map-get($nav-size-properties, 'nav-height');
+		padding: calc(#{map-get($nav-size-properties, 'nav-height')}/#{map-get($nav-size-properties, 'padding-top')}) $gap/2;
+	}
+}
+
+@mixin responsive-navbrand-size($nav-size, $default-breakpoint: 'small') {
+	@include navbrand-size($nav-size, $default-breakpoint);
+
+	$nav-breakpoints-map: nav-breakpoints-for($nav-size);
+	$nav-breakpoints-keys: map-keys($nav-breakpoints-map);
+
+	@each $breakpoint-name in $nav-breakpoints-keys {
+		@if $breakpoint-name != $default-breakpoint {
+			@include respond-above($breakpoint-name) {
+			@include navbrand-size($nav-size, $breakpoint-name);
+			}
+		}
+	}
+}
+
+// lib/mixins/_typography.scss
+@mixin navlink-size($nav-size, $breakpoint-name: 'small') {
+	$nav-size-properties: nav-properties-for($nav-size, $breakpoint-name);
+
+	@if $nav-size-properties {
+		font-size: map-get($nav-size-properties, 'font-size');
+		font-size: map-get($nav-size-properties, 'font-size-em');
+		padding: calc((#{map-get($nav-size-properties, 'nav-height')} - #{map-get($nav-size-properties, 'font-size-em')})/2) $gap/2;
+	}
+}
+
+@mixin responsive-navlink-size($nav-size, $default-breakpoint: 'small') {
+	@include navlink-size($nav-size, $default-breakpoint);
+
+	$nav-breakpoints-map: nav-breakpoints-for($nav-size);
+	$nav-breakpoints-keys: map-keys($nav-breakpoints-map);
+
+	@each $breakpoint-name in $nav-breakpoints-keys {
+		@if $breakpoint-name != $default-breakpoint {
+			@include respond-above($breakpoint-name) {
+			@include navlink-size($nav-size, $breakpoint-name);
+			}
+		}
+	}
+}
+
+// lib/mixins/_typography.scss
+@mixin navhide-size($nav-size, $breakpoint-name: 'small') {
+	$nav-size-properties: nav-properties-for($nav-size, $breakpoint-name);
+
+	@if $nav-size-properties {
+		transform: translate3d(0px, -#{map-get($nav-size-properties, 'nav-height')}, 0px);
+	}
+}
+
+@mixin responsive-navhide-size($nav-size, $default-breakpoint: 'small') {
+	@include navhide-size($nav-size, $default-breakpoint);
+
+	$nav-breakpoints-map: nav-breakpoints-for($nav-size);
+	$nav-breakpoints-keys: map-keys($nav-breakpoints-map);
+
+	@each $breakpoint-name in $nav-breakpoints-keys {
+		@if $breakpoint-name != $default-breakpoint {
+			@include respond-above($breakpoint-name) {
+			@include navhide-size($nav-size, $breakpoint-name);
+			}
+		}
+	}
+}
+
+// lib/mixins/_typography.scss
+@mixin nav-adjust-margin($nav-size, $breakpoint-name: 'small') {
+	$nav-size-properties: nav-properties-for($nav-size, $breakpoint-name);
+	@if $nav-size-properties {
+		margin-top: #{map-get($nav-size-properties, 'nav-height')} !important;
+	}
+}
+
+@mixin responsive-nav-adjust-margin($nav-size, $default-breakpoint: 'small') {
+	@include nav-adjust-margin($nav-size, $default-breakpoint);
+
+	$nav-breakpoints-map: nav-breakpoints-for($nav-size);
+	$nav-breakpoints-keys: map-keys($nav-breakpoints-map);
+
+	@each $breakpoint-name in $nav-breakpoints-keys {
+		@if $breakpoint-name != $default-breakpoint {
+			@include respond-above($breakpoint-name) {
+			@include nav-adjust-margin($nav-size, $breakpoint-name);
+			}
+		}
+	}
+}
