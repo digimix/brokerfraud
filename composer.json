@@ -1,27 +1,27 @@
 {
-  "name": "roots/sage",
+  "name": "digimix/brokerfraud",
   "type": "wordpress-theme",
-  "license": "MIT",
-  "description": "The best WordPress starter theme with a modern front-end development workflow. Based on HTML5 Boilerplate, gulp, Bower, and Bootstrap.",
-  "homepage": "https://roots.io/sage/",
-  "authors": [
-    {
-      "name": "Ben Word",
-      "email": "ben@benword.com",
-      "homepage": "https://github.com/retlehs"
-    },
-    {
-      "name": "Scott Walkinshaw",
-      "email": "scott.walkinshaw@gmail.com",
-      "homepage": "https://github.com/swalkinshaw"
-    }
+  "license": "Single Site",
+  "description": "Custom WordPress theme with a modern front-end development workflow. Based on HTML5 Boilerplate, gulp, Bower, and Bootstrap.",
+  "homepage": "https://github.com/digimix/brokerfraud",
+ "authors": [
+        {
+            "name": "Christine Cardoso",
+            "email": "christine@digimix.co",
+            "homepage": "https://digimix.co"
+        },
+        {
+	        "name": "Michael Salafia",
+            "email": "michael@digimix.co",
+            "homepage": "https://digimix.co"
+        }
   ],
   "keywords": [
     "wordpress"
   ],
   "support": {
-    "issues": "https://github.com/roots/sage/issues",
-    "forum": "https://discourse.roots.io/"
+    "issues": "https://github.com/digimix/brokerfraud/issues",
+    "forum": "https://digimix.co/helpdesk"
   },
   "require": {
     "php": ">=5.4.0",
