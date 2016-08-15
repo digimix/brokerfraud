@@ -1,6 +1,6 @@
 <?php //get_template_part('templates/page', 'header'); ?>
 
-<div class="text-center adjust-v-padding" style="max-width: 60%;margin: auto">
+<div class="page-header header-default">
 	<h1 class="entry-title">Recent Cases</h1>
 	<p>We have represented investors from across the country against large and small broker-dealers seeking and recovering many millions of dollars for broker malfeasance.The below is a sampling of recent and representative cases we have handled.</p>
 </div>
@@ -19,4 +19,7 @@
 <?php endwhile; ?>
 </ul>
 
-<?php the_posts_navigation(); ?>
+<?php the_posts_navigation(['prev_text'=>'<span>Previous Cases</span>', 'next_text'=>'<span>More Recent Cases</span>']); ?>
+
+<?php get_template_part('templates/story-reviews'); ?>
+<?php get_template_part('templates/story-contact'); ?>

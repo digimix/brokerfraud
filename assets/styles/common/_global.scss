@@ -72,9 +72,11 @@ body {
 }
 
 .block-reviews {
-	@extend .text-center;
 	@extend .adjust-h-padding;
 	@extend .adjust-v-padding-mega;
+	@media(min-width:breakpoint('medium')) {
+		text-align: center;
+	}
 	p + .flex {
 		margin-top: $gap;
 	}

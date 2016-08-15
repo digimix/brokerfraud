@@ -127,10 +127,13 @@
 .navbar-toggle {
 	background: color(1);
 	.icon-bar {
-		background: color(2);
+		background: gray(light);
 	}
-	&:hover {
-		background: color(3);
+	&:hover, &:focus {
+		background: lighten(color(1), 15%);
+		.icon-bar {
+			background: gray(light);
+		}
 	}
 }
 

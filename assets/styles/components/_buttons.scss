@@ -92,3 +92,40 @@
 		}
 	}
 }
+
+.btn-arrow-left {
+	span {
+		&:after {
+			display: none;
+		}
+		&:before {
+		    content: "\f104";
+		    font-family: 'FontAwesome';
+		    margin-right: 10px;
+		}
+	}
+}
+.nav-links {
+	@extend .flex;
+	@media (min-width: breakpoint('medium')) {
+		margin: $gap;
+	}
+	.nav-previous {
+		padding-right: $gap/3;
+		a {
+			@extend .btn;
+			@extend .btn-default;
+			@extend .btn-arrow-left;
+		}
+	}
+
+	.nav-next {
+		padding-left: $gap/3;
+		text-align: right;
+		a {
+			@extend .btn;
+			@extend .btn-default;
+			@extend .btn-arrow;
+		}
+	}
+}

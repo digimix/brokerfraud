@@ -16,3 +16,20 @@
 		}
 	}
 }
+
+.header-default {
+	@extend .adjust-v-padding;
+	margin: auto;
+	padding-left: $gap;
+	padding-right: $gap;
+	@media(min-width:breakpoint('medium')) {
+		max-width: 80%;
+		text-align: center;
+	}
+	.entry-title {
+
+	}
+	p {
+		color: gray(6);
+	}
+}

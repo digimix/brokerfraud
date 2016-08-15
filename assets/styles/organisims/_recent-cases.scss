@@ -9,9 +9,11 @@
 }
 
 ul.cases {
-	margin: $gap;
 	list-style: none;
 	padding: 0;
+	@media (min-width: breakpoint('medium')) {
+		margin: $gap;
+	}
 	&.related {
 		display: flex;
 	    flex-direction: row;
@@ -43,22 +45,41 @@ ul.cases {
 			align-content:center;
 		}
 		>article.copy {
-			flex-flow: row;
+			flex-flow: column;
 			padding: $gap;
 			background: palette(bg,light);
 			box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
+			@media (min-width: breakpoint('medium')) {
+				flex-flow: row;
+			}
 			h3 {
 				margin: 0;
 				@extend .text--deca;
+				color: gray(6);
 			}
 			> * {
 				flex: 1;
 			}
 			> :first-child {
-				flex-basis: 55%;
-				padding-right: $gap;
-				border-right: 2px solid gray(1);
-				margin-right: $gap;
+				flex-basis: 100%;
+				border-bottom: 2px solid gray(1);
+				padding-bottom: $gap/2;
+				margin-bottom: $gap/2;
+				@media (min-width: breakpoint('medium')) {
+					flex-basis: 25%; 
+					border-bottom: 0;
+					margin-bottom: 0;
+					padding-bottom: 0;
+					padding-right: $gap;
+					border-right: 2px solid gray(1);
+					margin-right: $gap;
+				}
+				@media (min-width: breakpoint('large')) {
+					flex-basis: 40%; 
+				}
+			}
+			>:nth-child(2) {
+				//background-color: gray(1);
 			}
 		}
 		

@@ -13,7 +13,7 @@ function create_cases() {
     register_post_type( 'cases',
         array(
             'labels' => array(
-			'name'                => _x( 'Case', 'Post Type General Name', 'mix' ),
+			'name'                => _x( 'Recent Cases', 'Post Type General Name', 'mix' ),
 			'singular_name'       => _x( 'Case', 'Post Type Singular Name', 'mix' ),
 			'menu_name'           => __( 'Cases', 'mix' ),
 			'parent_item_colon'   => __( 'Parent Item:', 'mix' ),

@@ -4,7 +4,7 @@ a {
 		color: lighten(color(4), 10%);
 	}
 	$link-icons: (
-		cart:   (char: "\f370", font: "Ionicons", color: grey(light)),
+		cart:   (char: "\f370", font: "Ionicons", color: gray(light)),
 	);
 
 	@each $link, $icon in $link-icons {
