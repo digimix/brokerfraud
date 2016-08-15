@@ -8,8 +8,11 @@ footer.footerMain{
 	color: gray(light);
 	background: gray(dark);
 	img.logo {
+		max-width: 100%;
 		margin:0 0 30px;
-		max-width: 336px;
+		@media(min-width: breakpoint('small')) {
+			max-width: 320px;
+		}
 	}
 	p {
 		@include responsive-text-size('centi');

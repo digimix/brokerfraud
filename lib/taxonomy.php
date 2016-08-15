@@ -3,8 +3,8 @@
 function mix_tax_claims() {
 
 	$labels = array(
-		'name'                       => _x( 'Claims', 'Taxonomy General Name', 'text_domain' ),
-		'singular_name'              => _x( 'Claim', 'Taxonomy Singular Name', 'text_domain' ),
+		'name'                       => _x( 'Stock Fraud Claims', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Stock Fraud Claim', 'Taxonomy Singular Name', 'text_domain' ),
 		'menu_name'                  => __( 'Claims', 'text_domain' ),
 		'all_items'                  => __( 'All Claims', 'text_domain' ),
 		'parent_item'                => __( 'Parent Item', 'text_domain' ),

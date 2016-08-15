@@ -58,6 +58,12 @@ function mix_post_pagesize( $query ) {
         $query->set( 'posts_per_page', 6 );
         return;
     }
+    if ( is_tax( 'claims' ) ) {
+        // Display 50 posts for a custom post type called 'movie'
+        $query->set( 'posts_per_page', -1 );
+        return;
+    }
+
 }
 add_action( 'pre_get_posts', __NAMESPACE__ . '\\mix_post_pagesize', 1 );
 
