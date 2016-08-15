@@ -7,9 +7,7 @@
 		<?php get_template_part('templates/page', 'overview'); ?>
 		<?php //get_template_part('templates/page', 'header'); ?>
 		<?php get_template_part('templates/cta-box', 'contact'); ?>
-		<div class="adjust-v-padding">
-			<p class="text--deci" style="color:#777;"><strong>We serve the following localities:</strong> Atlanta, Baltimore, Boston, Chicago, Dallas–Fort Worth, Denver, Detroit, Houston, Los Angeles, Miami, New York City, Philadelphia, Phoenix, San Bernardino-Riverside, San Diego, San Francisco, Seattle, St. Louis, Tampa–St. Petersburg, and Washington, D.C.</p>
-		</div>
+		<?php get_template_part('templates/cta-box', 'localities'); ?>
 	</div>
 	<div class="main-content">
 		<?php term_description(); ?>
@@ -25,7 +23,6 @@
 		  </div>
 		  <?php get_search_form(); ?>
 		<?php endif; ?>
-
 
 <?php
 	global $wp_query;
@@ -48,15 +45,7 @@
 </ul>
 </div>
 
-<!--
-	<ul class="cases related">
-	<?php while (have_posts()) : the_post(); ?>
-		<li><?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?></li>
-	<?php endwhile; ?>
-	</ul>
--->
-
-	<?php the_posts_navigation(['prev_text'=>'<span>Previous Cases</span>', 'next_text'=>'<span>More Recent Cases</span>']); ?>
+<?php //the_posts_navigation(['prev_text'=>'<span>Previous Cases</span>', 'next_text'=>'<span>More Recent Cases</span>']); ?>
 </div>
 <?php //get_template_part('templates/story-reviews'); ?>
 <?php //get_template_part('templates/badges','awards'); ?>

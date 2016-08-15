@@ -1,5 +1,22 @@
 /*scss/modules/_box.scss*/
 
+.info-localities {
+	@extend .adjust-v-padding;
+	p {
+		color: gray(5);
+		@include responsive-text-size('deci');
+	}
+}
+
+.overview {
+	.info-localities, .cta-box {
+		display: none;
+		@media (min-width: breakpoint('medium')) {
+			display: block;
+		}
+	}
+}
+
 .box {
 	max-width: 300px;
 	height: 150px;

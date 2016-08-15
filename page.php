@@ -5,9 +5,7 @@
 			<?php //get_template_part('templates/cta-box', 'cases'); ?>
 			<?php get_template_part('templates/cta-box', 'profiles'); ?>
 			<?php //get_template_part('templates/cta-box', 'contact'); ?>
-			<div class="adjust-v-padding">
-				<p class="text--deci" style="color:#777;"><strong>We serve the following localities:</strong> Atlanta, Baltimore, Boston, Chicago, Dallas–Fort Worth, Denver, Detroit, Houston, Los Angeles, Miami, New York City, Philadelphia, Phoenix, San Bernardino-Riverside, San Diego, San Francisco, Seattle, St. Louis, Tampa–St. Petersburg, and Washington, D.C.</p>
-			</div>
+			<?php get_template_part('templates/cta-box', 'localities'); ?>
 		</div>
 		<div class="main-content">
 			<?php get_template_part('templates/content', 'page'); ?>
