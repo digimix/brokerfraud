@@ -10,7 +10,7 @@
 		<?php get_template_part('templates/cta-box', 'localities'); ?>
 	</div>
 	<div class="main-content">
-		<?php term_description(); ?>
+		<?php echo term_description(); ?>
 	</div>
 </div>
 <div class="recent-cases">

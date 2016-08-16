@@ -23,7 +23,7 @@ function mix_tax_claims() {
 	$rewrite = array(
 		'slug'                       => 'stock-fraud-claims',
 		'with_front'                 => true,
-		'hierarchical'               => false,
+		'hierarchical'               => true,
 	);
 
 	$args = array(
