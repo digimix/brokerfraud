@@ -13,3 +13,29 @@
   @extend .btn;
   @extend .btn-default;
 }
+
+.main-content,
+.modal-body {
+	p + .wpcf7 {
+		margin-top: $gap;
+		padding-top: $gap;
+		border-top: 1px solid gray(1);
+		margin-left: 0;
+		margin-right: 0;
+		text-align: center;
+	}
+	.wpcf7 {
+		input,
+		select,
+		textarea {
+			width: 100%;
+		}
+		input:not(.wpcf7-submit),
+		select,
+		textarea {
+			//border-color: gray(3);
+			border: none;
+			background-color: gray(1);
+		}
+	}
+}

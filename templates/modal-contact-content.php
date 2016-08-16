@@ -8,7 +8,12 @@
 				</div>
 			<div class="modal-body">
 				<div class="flex">
-					<div>Fitapelli | Kurta</div>
+					<div>
+						<h4>Fitapelli | Kurta</h4>
+						<div class="address info-address">
+							<?php echo Roots\Sage\Customizer\grabContact(); ?>
+						</div>
+					</div>
 					<?php echo do_shortcode('[contact-form-7 id="4003" title="Contact form 1"]'); ?>
 				</div>
 			</div>

@@ -5,13 +5,49 @@
 	&.modal::before {
 		content: "";
 		display: inline-block;
-		height: 100%;
 		margin-right: -4px;
 		vertical-align: middle;
+		@media(min-width:breakpoint('small')) {
+			height: 100%;
+		}
 	}
 	.modal-dialog {
 		display: inline-block;
 		text-align: left;
 		vertical-align: middle;
+	}
+}
+
+.modal-title {
+	color: color(2);
+	text-transform: capitalize;
+	letter-spacing: -.025em;
+	font-weight: bold;
+}
+
+.modal-body {
+	.flex {
+		> *:first-child {
+			flex-basis: 100%;
+			@media(min-width:breakpoint('medium')) {
+				flex-basis: 40%;
+			}
+			h4 {
+				color: color(2);
+			}
+		}
+		.address {
+			color: gray(5);
+			margin-bottom: $gap;
+		}
+		.wpcf7 {
+			flex-basis: 100%;
+			@media(min-width:breakpoint('medium')) {
+				flex-basis: 60%;
+			}
+			p:last-of-type {
+				margin-bottom: 0;
+			}
+		}
 	}
 }
