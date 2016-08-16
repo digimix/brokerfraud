@@ -13,8 +13,8 @@
 			<p>
 		</div>
 		<figure class="align-bottom hero">
-			<?php get_template_part('templates/badges-awards'); ?>
-			<!-- <img class="img-responsive" src="/app/uploads/sites/2/2016/08/MDAF_160_white.png"> -->
+			<?php //get_template_part('templates/badges-awards'); ?>
+			<img class="img-responsive" src="/app/uploads/sites/2/2016/08/MDAF.png">
 		</figure>
 	</div>
 </div>
