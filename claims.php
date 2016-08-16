@@ -18,7 +18,7 @@
 			<div class="sitemap-links">
 			<?php
 			$tax = 'claims';
-			$args = ['hide_empty' => false, 'taxonomy' => $tax];
+			$args = ['hide_empty' => 0, 'taxonomy' => $tax];
 			$terms = get_terms( $args );
 			if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
 			    echo '<ul class="list-terms list-claims">';
