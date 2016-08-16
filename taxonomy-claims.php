@@ -9,8 +9,9 @@
 		<?php get_template_part('templates/cta-box', 'contact'); ?>
 		<?php get_template_part('templates/cta-box', 'localities'); ?>
 	</div>
-	<div class="main-content">
+	<div class="main-content claim-description">
 		<?php echo term_description(); ?>
+		<?php echo wpautop(get_term_meta(get_queried_object()->term_id, 'mix_claim_wysiwyg', 1)); ?>
 	</div>
 </div>
 <div class="recent-cases">

@@ -93,6 +93,14 @@ body {
 			flex-basis: 2/3*100%;
 			padding-left: $gap*2;
 		}
+		p + h4,
+		p + h5,
+		p + h6 {
+		    margin-top: $gap;
+		}
+		h1,h2,h3,h4,h5,h6 {
+			color: color(2);
+		}
 	}
 	>.sitemap-links {
 		flex-basis: 100%;

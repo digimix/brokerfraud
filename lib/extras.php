@@ -8,6 +8,9 @@ require_once locate_template('/lib/post-types/reviews.php');
 require_once locate_template('/lib/post-types/cases.php');
 require_once locate_template('/lib/taxonomy.php');
 
+if ( ! class_exists( 'cmb_Meta_Box' ) ) {
+	require_once locate_template('/lib/metabox.php');
+}
 
 /**
  * Add <excerpts> to pages post type
