@@ -91,6 +91,7 @@ function display_sidebar() {
     is_single(),
     is_page(),
     is_archive(),
+    is_home(),
   ]);
 
   return apply_filters('sage/display_sidebar', $display);

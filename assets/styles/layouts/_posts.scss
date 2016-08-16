@@ -1,8 +1,19 @@
-body.single-post {
-	@include responsive-nav-adjust-margin('base');
-	main {
-		> article.post {
-			@extend .white-paper;
+body {
+	&.single-post {
+		@include responsive-nav-adjust-margin('base');
+		main {
+			> article.post {
+				@extend .white-paper;
+			}
+		}
+	}
+	&.blog {
+		.type-post {
+			@extend .white-paper-xs;
+		}
+		.posts-navigation {
+			display: none;
 		}
 	}
 }
+

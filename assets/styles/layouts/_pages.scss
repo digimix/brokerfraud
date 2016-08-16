@@ -34,6 +34,13 @@ body {
 	}
 }
 
+.white-paper-xs {
+	@extend .page-content;
+	@media (min-width: breakpoint('large')) {
+		padding: $gap;
+	}
+}
+
 .white-paper {
 	@extend .page-content;
 	@media (min-width: breakpoint('large')) {
