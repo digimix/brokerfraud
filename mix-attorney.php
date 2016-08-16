@@ -1,3 +1,9 @@
+<?php
+/**
+ * Template Name: Attorneys
+ */
+?>
+
 <?php while (have_posts()) : the_post(); ?>
 	<div class="page-content page-columns">
 		<div class="overview">
