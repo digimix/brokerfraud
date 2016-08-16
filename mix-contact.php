@@ -26,4 +26,4 @@
 <?php endwhile; ?>
 
 <?php get_template_part('templates/story-reviews'); ?>
-<?php get_template_part('templates/story-contact'); ?>
+<?php //get_template_part('templates/story-contact'); ?>
