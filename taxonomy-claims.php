@@ -14,37 +14,31 @@
 		<?php echo wpautop(get_term_meta(get_queried_object()->term_id, 'mix_claim_wysiwyg', 1)); ?>
 	</div>
 </div>
+<?php if (have_posts()) : ?>
 <div class="recent-cases">
 	<h2 class="entry-title">Recover Losses for <?= $claim_title_new; ?></h2>
 	<p>The below is a sampling of recent and representative cases we have handled.</p>
-
-		<?php if (!have_posts()) : ?>
-		  <div class="alert alert-warning">
-		    <?php _e('Sorry, no results were found.', 'sage'); ?>
-		  </div>
-		  <?php get_search_form(); ?>
-		<?php endif; ?>
-
-<?php
+	<?php
 	global $wp_query;
 	$i = 1;
 	$count = $wp_query->post_count;?>
-<ul class="cases related">
-<?php while (have_posts()) : the_post(); ?>
-	<li><?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?></li>
-	<?php if($i == 3) {
-		echo '</ul>';
-		echo '<a href="#expand-more" class="toggle-collapse btn btn-default" data-toggle="collapse"><span>Show</span></a><div id="expand-more" class="collapse">';
-		echo '<ul class="cases related">';
-	} if ( $i == $count ) {
-		if ($count > 3) {
-	echo '</div>';
-	}
-	}
-	 $i++;?>
-<?php endwhile; ?>
-</ul>
+	<ul class="cases related">
+		<?php while (have_posts()) : the_post(); ?>
+		<li><?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?></li>
+		<?php if($i == 3) {
+			echo '</ul>';
+			echo '<a href="#expand-more" class="toggle-collapse btn btn-default" data-toggle="collapse"><span>Show</span></a><div id="expand-more" class="collapse">';
+			echo '<ul class="cases related">';
+		} if ( $i == $count ) {
+			if ($count > 3) {
+		echo '</div>';
+		}
+		}
+		 $i++;?>
+		<?php endwhile; ?>
+	</ul>
 </div>
+<?php endif; ?>
 
 <?php //the_posts_navigation(['prev_text'=>'<span>Previous Cases</span>', 'next_text'=>'<span>More Recent Cases</span>']); ?>
 </div>
