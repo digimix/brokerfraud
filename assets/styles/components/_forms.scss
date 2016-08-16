@@ -35,7 +35,8 @@
 		textarea {
 			//border-color: gray(3);
 			border: none;
-			background-color: gray(1);
+			background-color: lighten(gray(1), 5%);
+			padding: $gap/6;
 		}
 	}
 }
