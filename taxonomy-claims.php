@@ -2,6 +2,15 @@
 	$claim_title = Titles\title();
 	$claim_title_new = preg_replace('/^[^:]*:\s*/', '', $claim_title) . ' Claims';
 ?>
+
+<div class="breadcrumbs-bar">
+	<p id="breadcrumbs">
+		<span xmlns:v="http://rdf.data-vocabulary.org/#">
+		<span typeof="v:Breadcrumb">
+			<a href="<?= esc_url(home_url('/')); ?>" rel="v:url" property="v:title">Home</a> » <span rel="v:child" typeof="v:Breadcrumb"><a href="<?= esc_url(home_url('/')); ?>stock-fraud-claims/" rel="v:url" property="v:title">Stock Fraud Claims</a> » <span class="breadcrumb_last"><?= $claim_title_new; ?></span></span></span></span>
+	</p>
+</div>
+
 <div class="page-content page-columns">
 	<div class="overview">
 		<?php get_template_part('templates/page', 'overview'); ?>

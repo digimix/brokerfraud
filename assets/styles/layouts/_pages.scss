@@ -68,17 +68,21 @@ body {
 	}
 }
 
+.page-width {
+	@media (min-width: breakpoint('x-large')) {
+	    width: 1170px;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+}
+
 .page-columns {
 	display: flex;
 	flex-direction: row;
 	flex-flow: row wrap;
 	//@extend .container;
 	@extend .adjust-padding;
-	@media (min-width: breakpoint('x-large')) {
-	    width: 1170px;
-	    margin-left: auto;
-	    margin-right: auto;
-	}
+	@extend .page-width;
 	>.overview {
 		flex-basis: 100%;
 		@media (min-width: breakpoint('medium')) {

@@ -1,0 +1,5 @@
+.breadcrumbs-bar {
+	@extend .page-width;
+	@include responsive-text-size('deci');
+	letter-spacing: -.026em;
+}
