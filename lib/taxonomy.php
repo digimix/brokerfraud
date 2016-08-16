@@ -36,7 +36,7 @@ function mix_tax_claims() {
 		'show_tagcloud'              => true,
 		'rewrite'                    => $rewrite,
 	);
-	register_taxonomy( 'claims', array( 'cases' ), $args );
+	register_taxonomy( 'claims', array( 'cases','reviews' ), $args );
 }
 
 // Hook into the 'init' action
