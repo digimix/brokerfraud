@@ -8,6 +8,9 @@
 body {
 	color: palette(bg);
 	background-color: palette(bg);
+	&.mceContentBody {
+		background-color:#FFF !important;
+	}
 }
 
 .container-fw {

@@ -197,7 +197,7 @@ function mix_register_tax_claims_metabox() {
 		//'desc'    => __( 'field description (optional)', 'cmb2' ),
 		'id'      => $prefix . 'wysiwyg',
 		'type'    => 'wysiwyg',
-		'options' => array( 'textarea_rows' => 5, ),
+		'options' => array( 'textarea_rows' => 10, ),
 	) );
 
 }
