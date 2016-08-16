@@ -115,14 +115,7 @@ ul.cases {
 	a {
 		color: color(4);
 		span {
-			display: block;
-			font-weight: bold;
-			&:after {
-				content: "\f18e";
-				font-family: "FontAwesome";
-				margin-left: $gap/10;
-				text-decoration: none !important;
-			}
+			@extend .arrow-circle;
 		}
 	}
 } 

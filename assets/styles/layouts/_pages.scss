@@ -101,6 +101,20 @@ body {
 		h1,h2,h3,h4,h5,h6 {
 			color: color(2);
 		}
+		>.sitemap-links {
+			li {
+				flex-basis: 100%;
+				@media(min-width:breakpoint('medium')) {
+					flex-basis: 50%;
+				}
+				@media(min-width:breakpoint('large')) {
+					flex-basis: 50%;
+				}
+			}
+		}
+		* + .sitemap-links {
+			margin-top: $gap;
+		}
 	}
 	>.sitemap-links {
 		flex-basis: 100%;

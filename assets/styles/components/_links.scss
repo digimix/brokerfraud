@@ -40,3 +40,20 @@ a {
 		}
 	}
 }
+
+.arrow-circle {
+	display: block;
+	font-weight: bold;
+	&:after {
+		content: "\f18e";
+		font-family: "FontAwesome";
+		margin-left: $gap/10;
+		text-decoration: none !important;
+	}
+}
+
+.list-terms {
+	span {
+		@extend .arrow-circle;
+	}
+}
