@@ -34,6 +34,17 @@ body {
 	}
 }
 
+.main-content {
+	p + .wpcf7 {
+		margin-top: $gap;
+		padding-top: $gap;
+		border-top: 1px solid gray(1);
+		margin-left: 0;
+		margin-right: 0;
+		text-align: center;
+	}
+}
+
 .white-paper-xs {
 	@extend .page-content;
 	@media (min-width: breakpoint('large')) {
