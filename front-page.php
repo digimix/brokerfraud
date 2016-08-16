@@ -34,8 +34,8 @@
 		<p>The founding members of Fitapelli Kurta began their legal careers working at large defense firms, representing investment professionals and organizations before dedicating their energies to serve investors. Now, we use the valuable knowledge gained during that time to help individuals protect their rights against brokers who have acted carelessly or in bad faith. Armed with considerable skill and resources, the securities attorneys at Fitapelli Kurta have earned significant results on behalf of investors across the United States. We have obtained arbitration settlements totaling millions of dollars, among other successes. Our staff is proud of our reputation as aggressive but highly ethical professionals who will fight vigorously to assert the interests of our clients.</p>
 	</div>
 
-	<div class="sitemap-links show-1">
-		<?php dynamic_sidebar('sidebar-primary'); ?>
+	<div class="sitemap-links">
+		<?php get_template_part('templates/terms', 'claims'); ?>
 	</div>
 
 </div>

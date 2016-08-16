@@ -16,18 +16,7 @@
 		<div class="main-content">
 			<?php get_template_part('templates/content', 'page'); ?>
 			<div class="sitemap-links">
-			<?php
-			$tax = 'claims';
-			$args = ['hide_empty' => 0, 'taxonomy' => $tax];
-			$terms = get_terms( $args );
-			if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-			    echo '<ul class="list-terms list-claims">';
-			    foreach ( $terms as $term ) {
-			        echo '<li><a title="'.$term->name.' Claims information" href="'.get_term_link($term->name,$tax).'"><span>' . $term->name . '</span></a></li>';
-			    }
-			    echo '</ul>';
-			}
-			?>
+				<?php get_template_part('templates/terms', 'claims'); ?>
 			</div>
 		</div>
 	</div>

@@ -10,8 +10,8 @@
 		<div class="main-content">
 			<?php get_template_part('templates/content', 'page'); ?>
 		</div>
-		<div class="sitemap-links show-1">
-			<?php dynamic_sidebar('sidebar-primary'); ?>
+		<div class="sitemap-links">
+			<?php get_template_part('templates/terms', 'claims'); ?>
 		</div>
 	</div>
 <?php endwhile; ?>
