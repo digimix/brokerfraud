@@ -1,0 +1,7 @@
+.overview {
+	>.info-address {
+		margin-bottom: $gap;
+		color: gray(6);
+		@include responsive-text-size('deca');
+	}
+}
