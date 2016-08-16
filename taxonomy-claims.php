@@ -24,7 +24,7 @@
 	</div>
 </div>
 <?php if (have_posts()) : ?>
-<div class="recent-cases">
+<div class="block block-cases recent-cases">
 	<h2 class="entry-title">Recover Losses for <?= $claim_title_new; ?></h2>
 	<p>The below is a sampling of recent and representative cases we have handled.</p>
 	<?php
@@ -47,10 +47,9 @@
 		<?php endwhile; ?>
 	</ul>
 </div>
+
 <?php endif; ?>
 
-<?php //the_posts_navigation(['prev_text'=>'<span>Previous Cases</span>', 'next_text'=>'<span>More Recent Cases</span>']); ?>
-</div>
-<?php //get_template_part('templates/story-reviews'); ?>
+<?php get_template_part('templates/story-reviews','related'); ?>
 <?php //get_template_part('templates/badges','awards'); ?>
 <?php get_template_part('templates/story-contact','claims'); ?>

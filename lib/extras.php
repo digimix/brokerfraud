@@ -64,6 +64,7 @@ function mix_post_pagesize( $query ) {
     if ( is_tax( 'claims' ) ) {
         // Display 50 posts for a custom post type called 'movie'
         $query->set( 'posts_per_page', -1 );
+        $query->set( 'post_type', 'cases' );
         return;
     }
 
