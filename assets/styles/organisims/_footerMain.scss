@@ -56,6 +56,9 @@ $page-curl-3:linear-gradient(
 	outline:1px solid transparent;
 	//-webkit-backface-visibility:hidden;
 	-webkit-background-clip: content-box;
+	&:focus {
+		outline: none;
+	}
 	.text {
 		/* Safari */
 		-webkit-transform: rotateZ(-135deg);
