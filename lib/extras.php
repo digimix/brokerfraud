@@ -117,30 +117,3 @@ function mix_filter_claims_term_links( $list ) {
     return $list;
 }
 add_filter( 'term_links-claims',  __NAMESPACE__ . '\\mix_filter_claims_term_links' );
-
-
-
-// remove category base
-function fix_slash( $string, $type )
-{
-global $wp_rewrite;
-if ( $wp_rewrite->use_trailing_slashes == false )
-{
-    if ( $type != 'single' && $type != 'category' )
-        return trailingslashit( $string );
-
-    if ( $type == 'single' && ( strpos( $string, '.html/' ) !== false ) )
-        return trailingslashit( $string );
-
-    if ( $type == 'category' && ( strpos( $string, 'category' ) !== false ) )
-    {
-        $aa_g = str_replace( "/category/", "/", $string );
-        return trailingslashit( $aa_g );
-    }
-    if ( $type == 'category' )
-        return trailingslashit( $string );
-}
-return $string;
-}
-
-add_filter( 'user_trailingslashit', __NAMESPACE__ . '\\fix_slash', 55, 2 );
