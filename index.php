@@ -13,3 +13,6 @@
 <?php endwhile; ?>
 </ul>
 <?php the_posts_navigation(); ?>
+
+<?php get_template_part('templates/story-reviews'); ?>
+<?php get_template_part('templates/story-contact'); ?>
