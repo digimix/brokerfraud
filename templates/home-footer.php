@@ -1,4 +1,4 @@
-<div class="story-block dark bg-overlay-recover-losses">
+<div class="story-block story-block-contact dark bg-overlay-recover-losses">
 	<div class="container-fluid">
 		<div class="cols-2 align-center">
 			<div class="summary">
