@@ -63,7 +63,7 @@
 	<div class="sitemap-links">
 		<ul class="list-unstyled">
 		<?php
-		$args = array( 'posts_per_page' => -1, 'category_name' => 'investor-resources' );
+		$args = array( 'posts_per_page' => -1, 'category_name' => 'investor-resources', 'order'=>'ASC' );
 
 		$myposts = get_posts( $args );
 		foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
