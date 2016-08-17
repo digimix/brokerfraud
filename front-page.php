@@ -61,7 +61,8 @@
 		<p>However, you may have a claim even if you are not able to prove the elements of fraud. In this situation, you could still take action against an investment professional who acted carelessly by using a theory of negligence. To succeed as a plaintiff in a negligence claim, an investor must prove that the broker had a duty and breached that duty. Additionally, the plaintiff must show that he or she was harmed by the financial adviser’s breach and incurred damages because of it. In general, the standard to which a broker will be held in a negligence lawsuit is defined as how a reasonably prudent and similarly trained investment professional would behave under the same circumstances.</p>
 	</div>
 	<div class="sitemap-links">
-		<ul class="list-unstyled">
+		<h3>Investor Resources</h3>
+		<ul class="list-unstyled list-terms">
 		<?php
 		$args = array( 'posts_per_page' => -1, 'category_name' => 'investor-resources', 'order'=>'ASC' );
 
