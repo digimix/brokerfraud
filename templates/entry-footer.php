@@ -1,4 +1,4 @@
-<div class="story-block dark bg-overlay-recover-losses">
+<div class="story-block story-block-contact dark bg-overlay-recover-losses">
 	<div class="cols-2 align-center">
 		<div class="summary">
 			<h2 class="entry-title">Start recovering your losses</h2>

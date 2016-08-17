@@ -2,3 +2,11 @@
 	//margin-top: -$gap*5;
 	border-top: 1px solid gray(1);
 }
+
+body.archive {
+	&.tax-claims {
+		.page-content + .story-block-contact {
+			margin-top: $gap;
+		}
+	}
+}
