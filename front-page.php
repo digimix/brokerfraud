@@ -84,6 +84,19 @@
 
 <?php get_template_part('templates/home-footer'); ?>
 
-<div class="sitemap-links show-3 adjust-padding">
-	<?php dynamic_sidebar('sidebar-primary'); ?>
+<div class="sitemap-links adjust-padding">
+	<h3 style="color:#08214d;">Financial Products</h3>
+	<ul class="list-unstyled list-terms">
+	<?php
+	$args = array( 'posts_per_page' => -1, 'category_name' => 'financial-products', 'order'=>'ASC' );
+
+	$myposts = get_posts( $args );
+	foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+		<li>
+			<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
+		</li>
+	<?php endforeach;
+	wp_reset_postdata();?>
+
+	</ul>
 </div>
