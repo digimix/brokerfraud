@@ -46,6 +46,8 @@
 }
 
 @include font-face('Gotham', '../fonts/Gotham-Book', normal, normal);
+@include font-face('Gotham', '../fonts/gotham-medium', bold, normal);
+
 //@include font-face('Univers LT Pro', '../fonts/UniversLTPro-BoldCond', bold, normal);
 //@include font-face('Univers LT Pro', '../fonts/UniversLTStd-LightCn', light, normal);
 //@include font-face('Univers LT Pro', '../fonts/UniversLTPro-BoldCondObl', bold, italic);
