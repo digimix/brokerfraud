@@ -16,9 +16,9 @@
 		</div>
 		<div class="main-content">
 			<?php get_template_part('templates/content', 'page'); ?>
-			<div class="sitemap-links">
-				<?php get_template_part('templates/terms', 'claims'); ?>
-			</div>
+		</div>
+		<div class="sitemap-links">
+			<?php get_template_part('templates/terms', 'claims'); ?>
 		</div>
 	</div>
 <?php endwhile; ?>
