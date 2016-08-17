@@ -4,4 +4,15 @@
 		color: gray(6);
 		@include responsive-text-size('deca');
 	}
+	>.info-attorney-profile {
+		margin-bottom: $gap;
+		p {
+			@include responsive-text-size('deci');
+
+		}
+		h4 {
+			color: color(2);
+			@include responsive-text-size('deca');
+		}
+	}
 }
