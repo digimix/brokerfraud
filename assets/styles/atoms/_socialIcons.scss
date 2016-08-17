@@ -64,6 +64,7 @@
 				}
 				&:before {
 					content: map-get($icon, char);
+					color:white;
 				}
 			}
 		}
