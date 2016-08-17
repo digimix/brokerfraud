@@ -9,7 +9,7 @@
 				<a href="/stock-fraud-claims"> <span>FINRA <br/>ARBITRATION</span> We advocate on your behalf to reclaim your losses. </a>
 				<a href="/loss-recovery-process"> <span>HEARING <br/>/ AWARD</span> You receive a check in the mail with your losses (less our attorney fee). </a>
 			</div>
-			<a class="btn btn-fw btn-outline btn-arrow" href="<?= esc_url(home_url('/contact/')); ?>"><span>Explore our full 10-step process</span></a>
+			<a class="btn btn-fw btn-outline btn-arrow" href="#contactModal" data-toggle="modal" data-target="#contactModal"><span>Explore our full 10-step process</span></a>
 			<p>
 		</div>
 		<figure class="align-bottom hero">
