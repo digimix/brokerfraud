@@ -16,7 +16,7 @@ $slug = get_queried_object()->post_name;
 			} else if (stripos($slug,'fitapelli') !== false){
 				get_template_part('templates/cta-attorney', 'fitapelli');
 			} else {}
-			get_template_part('templates/cta-box', 'contact');
+			get_template_part('templates/cta-box', 'cases');
 			get_template_part('templates/cta-box', 'localities'); ?>
 		</div>
 		<div class="main-content">
