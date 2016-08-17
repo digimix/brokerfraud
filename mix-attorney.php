@@ -2,16 +2,22 @@
 /**
  * Template Name: Attorneys
  */
+
+$slug = get_queried_object()->post_name;
 ?>
 
 <?php while (have_posts()) : the_post(); ?>
 	<div class="page-content page-columns">
 		<div class="overview">
-			<?php get_template_part('templates/page', 'overview'); ?>
-			<?php //get_template_part('templates/cta-box', 'cases'); ?>
-			<?php //get_template_part('templates/cta-box', 'profiles'); ?>
-			<?php get_template_part('templates/cta-box', 'contact'); ?>
-			<?php get_template_part('templates/cta-box', 'localities'); ?>
+			<?php
+			get_template_part('templates/page', 'overview');
+			if (stripos($slug,'kurta') !== false) {
+				get_template_part('templates/cta-attorney', 'kurta');
+			} else {
+				get_template_part('templates/cta-attorney', 'fitapelli');
+			}
+			get_template_part('templates/cta-box', 'contact');
+			get_template_part('templates/cta-box', 'localities'); ?>
 		</div>
 		<div class="main-content">
 			<?php get_template_part('templates/content', 'page'); ?>
