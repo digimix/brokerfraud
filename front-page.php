@@ -60,8 +60,21 @@
 		<p>Claims against investment professionals may be brought under either state or federal laws, and they often involve fraud, negligence, or both. To establish a claim for fraud, an individual must show that his or her broker made a knowingly false statement with the intention of inducing reliance. It is also necessary to show that the investor did rely on the statement and suffered losses as a result.</p>
 		<p>However, you may have a claim even if you are not able to prove the elements of fraud. In this situation, you could still take action against an investment professional who acted carelessly by using a theory of negligence. To succeed as a plaintiff in a negligence claim, an investor must prove that the broker had a duty and breached that duty. Additionally, the plaintiff must show that he or she was harmed by the financial adviser’s breach and incurred damages because of it. In general, the standard to which a broker will be held in a negligence lawsuit is defined as how a reasonably prudent and similarly trained investment professional would behave under the same circumstances.</p>
 	</div>
-	<div class="sitemap-links show-2">
-		<?php dynamic_sidebar('sidebar-primary'); ?>
+	<div class="sitemap-links">
+		<ul class="list-unstyled">
+		<?php
+		$args = array( 'posts_per_page' => -1, 'category' => 'investor-resources' );
+
+		$myposts = get_posts( $args );
+		foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+			<li>
+				<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
+			</li>
+		<?php endforeach;
+		wp_reset_postdata();?>
+
+		</ul>
+		<?php //dynamic_sidebar('sidebar-primary'); ?>
 	</div>
 </div>
 
