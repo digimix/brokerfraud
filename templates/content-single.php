@@ -1,6 +1,6 @@
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
-	<div class="curl"><a href="<?= esc_url(home_url('/contact')); ?>">Recover your losses</a></div>
+	<div class="curl"><a data-toggle="modal" href="#contactModal" data-target="#contactModal">Recover your losses</a></div>
     <header>
       <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php get_template_part('templates/entry-meta'); ?>
