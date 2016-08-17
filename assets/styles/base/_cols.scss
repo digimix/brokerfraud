@@ -102,12 +102,11 @@ $cols: (
 	> :nth-child(1) {
 		width: 100%;
 		@media (min-width: breakpoint('medium')) {
-			flex: 65%;
+			flex: 70%;
 		}
-		@media (min-width: breakpoint('large')) {
+		@media (min-width: breakpoint('x-large')) {
 			flex: 60%;
 		}
-
 	}
 	> :nth-child(2) {
 		flex: 1;
