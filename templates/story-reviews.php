@@ -15,7 +15,6 @@
 				</li>
 			<?php endforeach;
 			wp_reset_postdata();?>
-
 			</ul>
 		</div>
 		<div class="divider"></div>
