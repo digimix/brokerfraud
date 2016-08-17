@@ -5,7 +5,7 @@
 ?>
 
 <?php while (have_posts()) : the_post(); ?>
-	<?php //get_template_part('templates/breadcrumbs'); ?>
+	<?php get_template_part('templates/breadcrumbs'); ?>
 	<div class="page-content page-columns">
 		<div class="overview">
 			<?php get_template_part('templates/page', 'overview'); ?>
