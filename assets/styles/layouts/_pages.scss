@@ -10,8 +10,12 @@ body {
 		main {
 			@extend .adjust-v-padding;
 			:last-child {
-				&.story-block {
+				&.story-block,
+				&.badge-list {
 					margin-bottom: -$gap;
+				}
+				&.badge-list {
+					@extend .adjust-v-padding;
 				}
 			}
 		}
