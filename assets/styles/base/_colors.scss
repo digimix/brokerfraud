@@ -385,10 +385,6 @@ background-image: radial-gradient(center top, ellipse farthest-corner, #FDFDFD 0
 
 
 
-body {
-	background: linear-gradient(180deg, lighten(gray(3),10%) 0%, lighten(gray(2),20%) 50%) ;
-}
-
 .gradient {
 	background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(25,25,25,1) 60%, rgba(50,50,50,1) 61%, rgba(76,76,76,1) 71%, rgba(102,102,102,1) 100%);
 }

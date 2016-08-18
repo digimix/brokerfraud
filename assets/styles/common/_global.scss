@@ -6,8 +6,11 @@
 }
 
 body {
-	color: palette(bg);
-	background-color: palette(bg);
+	color: gray(7);
+	//background-color: palette(bg);
+	&.mix {
+		background: linear-gradient(180deg, lighten(gray(3),10%) 0%, lighten(gray(2),20%) 50%);
+	}
 	&.mceContentBody {
 		background-color:#FFF !important;
 	}
