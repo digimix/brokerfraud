@@ -25,8 +25,10 @@
 </div>
 <?php if (have_posts()) : ?>
 <div class="block block-cases recent-cases">
-	<h2 class="entry-title">Recover Losses for <?= $claim_title_new; ?></h2>
-	<p>The below is a sampling of recent and representative cases we have handled.</p>
+	<div class="adjust-h-padding">
+		<h2 class="entry-title">Recover Losses for <?= $claim_title_new; ?></h2>
+		<p>The below is a sampling of recent and representative cases we have handled.</p>
+	</div>
 	<?php
 	global $wp_query;
 	$i = 1;
