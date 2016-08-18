@@ -3,7 +3,7 @@
 		<div class="summary hero">
 			<h2 class="entry-title">Millions of Dollars of Investor Losses Recovered</h2>
 			<p>The experienced stock fraud lawyers at Fitapelli Kurta focus their practice on all aspects of investment fraud and misrepresentation. When you suspect misconduct by your broker, our team of securities attorneys will investigate the specific circumstances of your case and guide you through the process of pursuing recovery from any responsible party.</p>
-			<h5>Stock fraud arbitration process</h5>
+			<h4 style="font-weight: bold;">Stock Fraud Arbitration Process:</h4>
 			<div class="steps-boxes">
 				<a href="#contactModal" data-toggle="modal" data-target="#contactModal"> <span>FREE CASE <br/>EVALUATION</span> Learn if you have a valid claim, and how we will recover your funds.</a>
 				<a href="/stock-fraud-claims"> <span>FINRA <br/>ARBITRATION</span> We advocate on your behalf to reclaim your losses. </a>
