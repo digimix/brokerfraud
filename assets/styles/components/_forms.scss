@@ -80,3 +80,15 @@ ul.gform_fields {
 		display: none;
 	}
 }
+
+.gform_confirmation_wrapper  {
+	margin-top: $gap;
+	padding-top: $gap;
+    border-top: 1px solid gray(1);
+}
+
+.gform_confirmation_message {
+	font-weight: bold;
+	@include responsive-text-size('hecto');
+	color: color(2);
+}
