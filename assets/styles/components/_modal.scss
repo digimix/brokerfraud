@@ -27,6 +27,12 @@
 
 .modal-body {
 	.flex {
+		display: block;
+		@media(min-width:breakpoint('medium')) {
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+		}
 		> *:first-child {
 			flex-basis: 100%;
 			@media(min-width:breakpoint('medium')) {

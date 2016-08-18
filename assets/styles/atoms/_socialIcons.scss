@@ -109,6 +109,10 @@
     -webkit-transform: translateX(-100%);
     @include responsive-nav-adjust-margin('base');
     z-index: 1000;
+    display: none;
+    @media(min-width:breakpoint('medium')) {
+	    display: block;
+    }
     .social-icons {
 	    li {
 		    display: block;
