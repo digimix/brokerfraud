@@ -40,7 +40,8 @@
 			color: gray(5);
 			margin-bottom: $gap;
 		}
-		.wpcf7 {
+		.wpcf7,
+		.gform_wrapper {
 			flex-basis: 100%;
 			@media(min-width:breakpoint('medium')) {
 				flex-basis: 60%;

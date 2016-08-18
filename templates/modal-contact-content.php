@@ -14,7 +14,7 @@
 							<?php echo Roots\Sage\Customizer\grabContact(); ?>
 						</div>
 					</div>
-					<?php echo do_shortcode('[contact-form-7 id="4003" title="Contact form 1"]'); ?>
+					<?php echo do_shortcode('[gravityform id="2" title="false" description="false"]'); ?>
 				</div>
 			</div>
 			<div class="modal-footer hidden">

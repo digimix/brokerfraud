@@ -16,7 +16,8 @@
 
 .main-content,
 .modal-body {
-	p + .wpcf7 {
+	p + .wpcf7,
+	p + .gform_wrapper {
 		margin-top: $gap;
 		padding-top: $gap;
 		border-top: 1px solid gray(1);
@@ -24,6 +25,7 @@
 		margin-right: 0;
 		text-align: center;
 	}
+	p +
 	.wpcf7 {
 		input,
 		select,
@@ -38,5 +40,43 @@
 			background-color: lighten(gray(1), 5%);
 			padding: $gap/6;
 		}
+	}
+}
+
+#gform_2 {
+	label {
+		display: none;
+	}
+	li {
+		margin-bottom: $gap/3;
+	}
+}
+
+ul.gform_fields {
+	@extend .list-unstyled;
+	input,
+	select,
+	textarea {
+		width: 100%;
+	}
+	input:not(.gform_button),
+	select,
+	textarea {
+		//border-color: gray(3);
+		border: none;
+		background-color: lighten(gray(1), 5%);
+		padding: $gap/6;
+	}
+}
+
+.gform_button {
+	@extend .btn;
+	@extend .btn-1;
+	width: 100%;
+}
+
+.gform_wrapper {
+	.gfield_required {
+		display: none;
 	}
 }
