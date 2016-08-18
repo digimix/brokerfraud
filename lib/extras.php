@@ -117,3 +117,6 @@ function mix_filter_claims_term_links( $list ) {
     return $list;
 }
 add_filter( 'term_links-claims',  __NAMESPACE__ . '\\mix_filter_claims_term_links' );
+
+
+add_filter( 'gform_init_scripts_footer', '__return_true' );
