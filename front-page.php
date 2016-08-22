@@ -19,6 +19,9 @@
 	</div>
 </div>
 
+
+<?php echo 'Site url:' . site_url(); ?>
+
 <div class="page-content page-columns">
 	<div class="overview">
 		<p class="text--deci caps">
